@@ -32,6 +32,7 @@ gulp.task('html', () => {
   return gulp.src('{.,events,search,who}/index.html')
     .pipe(prefix('src="/'))
     .pipe(prefix('href="/'))
+    .pipe(prefix("Audio('/"))
     .pipe(minifyHTML())
     .pipe(gulp.dest('dist'));
 });
@@ -47,8 +48,13 @@ gulp.task('images', () => {
     .pipe(gulp.dest('dist/images'));
 });
 
+gulp.task('audio', () => {
+  return gulp.src('audio/**')
+    .pipe(gulp.dest('dist/audio'));
+});
+
 gulp.task('build', (cb) => {
-  sequence('clean', ['sass', 'html', 'js', 'images'], cb);
+  sequence('clean', ['sass', 'html', 'js', 'images', 'audio'], cb);
 });
 
 gulp.task('pages', ['build'], () => {
