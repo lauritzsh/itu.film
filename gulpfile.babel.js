@@ -6,7 +6,13 @@ import compass from 'gulp-compass';
 import minifyCSS from 'gulp-minify-css';
 import minifyHTML from 'gulp-minify-html';
 import pages from 'gulp-gh-pages';
+import replace from 'gulp-replace';
 import uglify from 'gulp-uglify';
+
+function prefix(path) {
+  const escaped = path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return replace(new RegExp(escaped, 'g'), `${path}itu.film/`);
+}
 
 gulp.task('clean', (cb) => {
   return del('dist', cb);
@@ -17,12 +23,15 @@ gulp.task('sass', () => {
     .pipe(compass({
       config_file: 'config.rb'
     }))
+    .pipe(prefix('url("/'))
     .pipe(minifyCSS())
     .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('html', () => {
   return gulp.src('{.,events,search,who}/index.html')
+    .pipe(prefix('src="/'))
+    .pipe(prefix('href="/'))
     .pipe(minifyHTML())
     .pipe(gulp.dest('dist'));
 });
