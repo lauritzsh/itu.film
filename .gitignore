@@ -36,13 +36,6 @@ node_modules
 *.css.map
 
 ### Build ###
-dest
-/css
-# Created by https://www.gitignore.io
-
-### Bower ###
-bower_components
-.bower-cache
-.bower-registry
-.bower-tmp
-
+dist
+css
+.publish
