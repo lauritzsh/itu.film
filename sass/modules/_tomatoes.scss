@@ -1,0 +1,15 @@
+.tomatoes {
+  @include breakpoint(mobile) {
+    @include span(50% last);
+  }
+
+  &__tomato--full {
+    @extend %vote-icon;
+    background: url('/images/css/tomato_active.png') no-repeat;
+  }
+
+  &__tomato--empty {
+    @extend %vote-icon;
+    background: url('/images/css/tomato_inactive.png') no-repeat;
+  }
+}

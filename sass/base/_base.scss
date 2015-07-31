@@ -1,0 +1,20 @@
+body {
+  background-color: $gray;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+section {
+  @include full;
+  @include clearfix;
+  margin-bottom: gutter();
+}
+
+::selection {
+  color: $white;
+  background: $red;
+  text-shadow: none;
+}

@@ -1,0 +1,29 @@
+.overflow-hack {
+  margin-top: 5px;
+}
+
+.movie {
+  @include span(2);
+
+  height: 210px;
+  margin-bottom: gutter();
+  z-index: 999;
+
+  @include breakpoint(mobile) {
+    @include span(47%);
+    height: auto;
+
+    &:nth-of-type(2n) {
+      @include last;
+    }
+  }
+
+  &.is-hovered {
+    box-shadow: 0 0 8px $white;
+    border: 1px solid $black;
+  }
+
+  &:nth-of-type(6n) {
+    @include last;
+  }
+}

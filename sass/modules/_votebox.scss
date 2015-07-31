@@ -1,0 +1,33 @@
+.votebox {
+  @include span(4 last);
+  background-color: $black;
+  padding: gutter();
+
+  @include breakpoint(mobile) {
+    display: none;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__option {
+    display: block;
+    margin-bottom: 13px;
+  }
+
+  &__checkbox {
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+
+  &__movie {
+    display: block;
+    background-color: $white;
+    color: $black;
+    font-weight: $light;
+    overflow: hidden;
+    padding: 10px 5px;
+  }
+}

@@ -1,0 +1,47 @@
+.search {
+  @include clearfix;
+  padding: 5px 0;
+  background-color: $black;
+
+  &__title {
+    padding: 0 5px;
+
+    &__full {
+      @include breakpoint(mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__explanation,
+  &__guide,
+  &__example {
+    @include span(4);
+
+    @include breakpoint(mobile) {
+      @include full;
+      padding: 5px;
+    }
+  }
+
+  &__explanation {
+    padding-left: 5px;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+
+  &__example {
+    @include last;
+    padding-right: 5px;
+  }
+
+  &__input {
+    width: span(4) - 5px;
+
+    @include breakpoint(mobile) {
+      @include full;
+    }
+  }
+}

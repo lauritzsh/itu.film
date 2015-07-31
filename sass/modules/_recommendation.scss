@@ -1,0 +1,20 @@
+.recommendations {
+  @include breakpoint(mobile) {
+    @include full;
+  }
+}
+
+.recommendation {
+  &__quote {
+    margin-bottom: 0;
+
+    &:before,
+    &:after {
+      content: '"';
+    }
+  }
+
+  &__by:before {
+    content: '- ';
+  }
+}

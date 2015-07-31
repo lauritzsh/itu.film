@@ -1,0 +1,48 @@
+.featured-movie {
+  @include span(8);
+
+  @include breakpoint(mobile) {
+    @include full;
+  }
+
+  &__poster {
+    @include span(5 of 8);
+
+    @include breakpoint(mobile) {
+      @include full;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__info {
+    @include span(3 of 8 last);
+
+    @include breakpoint(mobile) {
+      @include full;
+    }
+  }
+
+  &__actors {
+    font-weight: bold;
+  }
+
+  &__popcorn {
+    display: none;
+
+    @include breakpoint(mobile) {
+      @include full;
+      padding: 5%;
+      display: block;
+      background-color: $black;
+
+      &__icon {
+        @include span(20%);
+      }
+
+      &__text {
+        @include span(70% last);
+        font-size: ($base-font-size * $ratio) + px;
+      }
+    }
+  }
+}

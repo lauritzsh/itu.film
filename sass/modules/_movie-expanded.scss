@@ -1,0 +1,35 @@
+.movie-expanded {
+  @include full;
+  background-color: $black;
+  margin-bottom: gutter();
+  padding: 10px 0;
+  border-top: 1px solid $white;
+  border-bottom: 1px solid $white;
+
+  &.is-hidden {
+    display: none;
+  }
+
+  &__poster {
+    @include span(3);
+  }
+
+  &__summary {
+    @include span(5);
+
+    &__actors {
+      font-weight: $bold;
+    }
+  }
+
+  &__ratings {
+    @include span(4 last);
+  }
+
+  &__mood {
+    display: inline-block;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: $gray;
+  }
+}

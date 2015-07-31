@@ -1,0 +1,56 @@
+.member {
+  @include span(3);
+  background-color: $black;
+  margin-bottom: gutter();
+
+  @include breakpoint(mobile) {
+    @include full;
+  }
+
+  &:nth-of-type(4n + 8) {
+    @include last;
+  }
+
+  &__headshot {
+    border-bottom: 1px solid $red;
+    height: 300px;
+
+    @include breakpoint(mobile) {
+      @include full;
+      height: auto;
+    }
+  }
+
+  &__name,
+  &__role,
+  &__favorite-movie {
+    margin-bottom: 0;
+  }
+
+  &__role {
+    font-weight: $bold;
+  }
+
+  &__favorite-movie {
+    font-weight: $light;
+    font-style: italic;
+  }
+
+  &__info {
+    padding: 5px;
+  }
+
+  &__social {
+    float: right;
+  }
+
+  &__facebook {
+    @extend %social-icon;
+    background: url('/images/css/facebook_social.png') no-repeat center center;
+  }
+
+  &__email {
+    @extend %social-icon;
+    background: url('/images/css/email_social.png') no-repeat center center;
+  }
+}

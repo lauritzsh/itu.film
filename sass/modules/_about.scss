@@ -1,0 +1,14 @@
+.about {
+  @include span(3 last);
+  background-color: $black;
+  padding: gutter();
+  margin-top: -45px;
+  height: 403px;
+
+  @include breakpoint(mobile) {
+    @include full;
+    height: auto;
+    margin-top: 0;
+    margin-bottom: gutter();
+  }
+}

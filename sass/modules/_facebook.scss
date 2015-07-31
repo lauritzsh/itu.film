@@ -1,0 +1,8 @@
+.fb-page {
+  @include span(4 last);
+
+  @include breakpoint(mobile) {
+    // scss-lint:disable ImportantRule
+    display: none !important;
+  }
+}

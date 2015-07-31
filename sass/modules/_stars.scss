@@ -1,0 +1,15 @@
+.stars {
+  @include breakpoint(mobile) {
+    @include span(50% no-gutters);
+  }
+
+  &__star--full {
+    @extend %vote-icon;
+    background: url('/images/css/star_active.png') no-repeat;
+  }
+
+  &__star--empty {
+    @extend %vote-icon;
+    background: url('/images/css/star_inactive.png') no-repeat;
+  }
+}

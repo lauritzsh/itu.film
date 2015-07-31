@@ -1,0 +1,59 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div {
+  color: $white;
+  font-family: $base-font;
+}
+
+p,
+a {
+  font-size: $base-font-size + px;
+  line-height: $ratio;
+  margin-bottom: $base-font-size + px;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $red;
+  }
+}
+
+// Refactor to using mixin/function probably
+h1,
+h1 a {
+  font-size: ($base-font-size * pow($ratio, 3)) + px;
+  line-height: $ratio;
+  margin-bottom: $base-font-size + px;
+}
+
+h2,
+h2 a {
+  font-size: ($base-font-size * pow($ratio, 2)) + px;
+  line-height: $ratio;
+  margin-bottom: $base-font-size + px;
+}
+
+h3,
+h3 a {
+  font-size: ($base-font-size * $ratio) + px;
+  line-height: $ratio;
+  margin-bottom: $base-font-size + px;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}

@@ -1,0 +1,13 @@
+@mixin breakpoint($point) {
+  @if $point == mobile {
+    @media screen and (max-width: $mobile) {
+      @content
+    }
+  }
+}
+
+@mixin center {
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+}

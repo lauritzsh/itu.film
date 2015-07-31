@@ -1,0 +1,48 @@
+// Misc
+$ratio: 1.25;
+
+// Colors
+$red:   #C12529;
+$black: #1E1E20;
+$gray:  #2A2C2B;
+$white: #FCFFFA;
+
+// Typography
+$light: 100;
+$regular: 400;
+$bold: 700;
+$base-font: Helvetica, sans-serif;
+$base-font-size: 13;
+
+// Page elements
+$banner-height: 130px;
+$mobile-banner-height: 60px;
+
+// Views
+$mobile: 670px;
+
+// Libraries
+@import 'compass/reset';
+@import 'compass/css3';
+@import 'compass/utilities';
+@import 'susy';
+
+// Keeps Susy/Compass from complaining
+// https://github.com/ericam/susy/issues/425
+@mixin box-sizing($box-model: $default-box-sizing) {
+  @if type-of($box-model) == string {
+    $box-model: unquote($box-model);
+  }
+  @include prefixed-properties(css3-boxsizing, $box-sizing-support-threshold, (box-sizing: $box-model));
+}
+
+// Susy
+@include border-box-sizing;
+
+$susy: (
+  global-box-sizing: border-box,
+  columns: 12,
+  column-width: 60px,
+  gutter-width: 20px/60px,
+  math: static
+);

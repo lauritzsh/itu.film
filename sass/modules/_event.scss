@@ -1,0 +1,47 @@
+.events {
+  @include span(8);
+
+  @include breakpoint(mobile) {
+    @include full;
+  }
+}
+
+.event {
+  @include span(8 last);
+  background-color: $black;
+  margin-bottom: 13px;
+
+  @include breakpoint(mobile) {
+    @include full;
+    padding-right: 5px;
+  }
+
+  &__poster {
+    @include span(2);
+
+    @include breakpoint(mobile) {
+      @include span(25%);
+    }
+  }
+
+  &__info {
+    @include span(6 last);
+    padding: gutter() 0;
+
+    @include breakpoint(mobile) {
+      @include span(70% last);
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__date {
+    font-weight: $light;
+    display: inline-block;
+    margin-bottom: 13px;
+    font-size: 12px;
+  }
+}
+
