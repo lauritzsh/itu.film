@@ -1,14 +1,16 @@
 import del from 'del';
 import sequence from 'run-sequence';
+import pngquant from 'imagemin-pngquant';
 import gulp from 'gulp';
+import autoprefixer from 'gulp-autoprefixer';
 import compass from 'gulp-compass';
 import gif from 'gulp-if';
+import imagemin from 'gulp-imagemin';
 import minifyCSS from 'gulp-minify-css';
 import minifyHTML from 'gulp-minify-html';
 import pages from 'gulp-gh-pages';
 import replace from 'gulp-replace';
 import uglify from 'gulp-uglify';
-import autoprefixer from 'gulp-autoprefixer';
 
 let isProduction = process.env.NODE_ENV === 'production';
 const BUILD_FOLDER = isProduction ? 'dist' : 'build';
@@ -54,7 +56,13 @@ gulp.task('js', () => {
 });
 
 gulp.task('images', () => {
+  const minimize = imagemin({
+    progressive: true,
+    use: [pngquant()],
+  });
+
   return gulp.src('images/**')
+    .pipe(gif(isProduction, minimize))
     .pipe(gulp.dest(`${BUILD_FOLDER}/images`));
 });
 
